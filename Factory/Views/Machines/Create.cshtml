@@ -9,6 +9,9 @@
 {
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
+
+  @Html.Label("select engineer")
+  @Html.DropDownList("EngineerId")
   <input type="submit" value="add a new machine" />
 }
 <p>Show @Html.ActionLink("all machines", "Index")</p>
