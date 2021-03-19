@@ -1,9 +1,15 @@
-// In this class file, make sure the namespace matches the name of your project (the equivalent of ProjectName). For instance:
+using System.Collections.Generic;
 
-namespace ProjectName.Models
-{
-  public class ClassName
+namespace Factory.Models
+{  
+  public class Engineer
   {
-//     properties, constructors, methods, etc. go here
+    public Engineer()
+    {
+      this.JoinEntities = new HashSet<EngineerMachine>();
+    }
+    public int EngineerId { get; set; }
+    public string Name { get; set; }
+    public virtual ICollection<EngineerMachine> JoinEntities { get; set; }
   }
 }
