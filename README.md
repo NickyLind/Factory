@@ -31,7 +31,7 @@ To run this application you will need the following:
 * Find the respository at (https://github.com/NickyLind/ProjectName.Solution)
 * Select the green <span style="color:green">'Code'</span> button above the repository and copy the HHTPS link
 * In your terminal, find the directory you want to place the [INSERT PROJECT HERE] directory in
-* In your terminal, use the git command `git clone https://github.com/NickyLind/ProjectName.Solution`
+* In your terminal, use the git command `git clone https://github.com/NickyLind/ProjectName.Solution [NameYouWantToNameProject]`
 * Open in Visual Studio Code or another editor
 
 ### 2) Setup a Database for the project:
