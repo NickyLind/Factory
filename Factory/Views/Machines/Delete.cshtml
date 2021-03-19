@@ -1,2 +1,14 @@
-@* <h1>Your list has been cleared!</h1>
-<p><a href="/classname">Back to list.</a></p> *@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h2>Are you sure you want to remove this machine from the list?</h2>
+
+@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Delete" />
+}
+<p>Back to @Html.ActionLink("Machine List", "Index")</p>
