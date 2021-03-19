@@ -11,6 +11,10 @@
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.MachineId)
+  @foreach (var join in Model.JoinEntities)
+  {
+      @Html.Hidden("joinId", @join.EngineerMachineId)
+  }
 
   @Html.LabelFor(model => model.Name)
   @Html.EditorFor(model => model.Name)
