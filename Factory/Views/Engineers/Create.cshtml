@@ -1,8 +1,20 @@
-@* <h1>Add a new item to @Model.Name</h1>
+@{
+  Layout = "_Layout";
+}
 
-<form action="/categories/@Model.Id/items" method="post">
-  <input id="categoryId" name="categoryId" type="hidden" value="@Model.Id">
-  <label for="itemDescription">Item Description</label>
-  <input id="itemDescription" name="itemDescription" type="text">
-  <button type="submit">Add Item</button>
-</form> *@
+@model Factory.Models.Engineer
+
+<h4>Add a new Engineer</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+
+  @Html.Label("Select machine")
+  @Html.DropDownList("MachineId")
+
+  <input type="submit" value="Add new engineer" class="btn btn-danger" />
+}
+
+<p>Show all @Html.ActionLink("Engineers", "Index")</p>

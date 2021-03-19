@@ -24,5 +24,6 @@ else
 }
 
 <p>back to @Html.ActionLink("Engineer List", "Index")</p>
-<p>Edit @Html.ActionLink("Engineer", "Edit", new { id = Model.EngineerId })</p>
+<p>Edit this @Html.ActionLink("Engineer", "Edit", new { id = Model.EngineerId })</p>
+<p>Add a new @Html.ActionLink("Machine License", "AddMachine", new {id = Model.EngineerId }) for this Engineer</p>
 <p>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</p> 
