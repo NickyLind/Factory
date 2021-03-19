@@ -5,35 +5,20 @@
 @model List<Factory.Models.Engineer>;
 
 <h1>Welcome to the Factory</h1>
-
-@if(@Model.EngineerId.Count == 0)
+<h3>Engineers:</h3>
+<ul>
+@foreach (Engineer engineer in ViewBag.Engineers)
 {
-  <h3>There are no Engineers to Display</h3>
+  <li>@engineer.Name</li>
 }
-else
+</ul>
+<h3>Machines:</h3>
+<ul>
+@foreach (Machine machine in ViewBag.Machines)
 {
-  <h3>Engineers:</h3>
-  <ul>
-    @foreach (var engineer in Model)
-    {
-      <li>@Html.ActionLink($"{engineer.Name}", "Details", new {id = engineer.EngineerId }) :
-        @foreach(var machine in engineer.JoinEntities)
-        {
-          if (machine.Machine.Name != null)
-          {
-            <text> @machine.Machine.Name |</text>
-          }
-        }
-        @if (engineer.JoinEntities.Count == 0)
-        {
-          <text>This engineer isn't licensed to run any machines</text>
-        }
-      </li>
-    }
-  </ul>
+  <li>@machine.Name</li>
 }
-
-
+</ul>
 
 <p>@Html.ActionLink("Engineers Home", "Index", "Engineers")</p>
 <p>@Html.ActionLink("Machines Home", "Index", "Machines")</p>
