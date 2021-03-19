@@ -28,10 +28,10 @@ To run this application you will need the following:
 * [MySQL and MySQL Workbench](https://www.mysql.com/)
 
 ### 1) Cloning the Project:
-* Find the respository at (https://github.com/NickyLind/ProjectName.Solution)
+* Find the respository at (https://github.com/NickyLind/Factory.Solution)
 * Select the green <span style="color:green">'Code'</span> button above the repository and copy the HHTPS link
 * In your terminal, find the directory you want to place the [INSERT PROJECT HERE] directory in
-* In your terminal, use the git command `git clone https://github.com/NickyLind/ProjectName.Solution [NameYouWantToNameProject]`
+* In your terminal, use the git command `git clone https://github.com/NickyLind/Factory.Solution`
 * Open in Visual Studio Code or another editor
 
 ### 2) Setup a Database for the project:
