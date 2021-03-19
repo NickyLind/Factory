@@ -52,8 +52,17 @@ namespace Factory.Controllers
 
     public ActionResult Edit(int id)
     {
-      Machine thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
-      ViewBag.MachineId = new SelectList(_db.Engineers, "EngineerId", "Name");
+      var thisMachine = _db.Machines
+        .Include(machine => machine.JoinEntities)
+        .ThenInclude(join => join.Engineer)
+        .FirstOrDefault(machine => machine.MachineId == id);
+      var selectedEngineers = _db.EngineerMachine
+        .Where(em => em.MachineId == id)
+        .Select(engineer => engineer.EngineerId).ToList();
+      ViewBag.EngineerId = new SelectList(_db.Engineers
+        .Where(engineer => !selectedEngineers.Contains(engineer.EngineerId))
+        .Select(engineer => engineer),
+        "EngineerId", "Name");
       return View(thisMachine);
     }
 
