@@ -1,6 +1,6 @@
-# _{Application Name}_
+# _Factory_
 
-#### _{Brief description of application}_
+#### _This applications allows users to add machines and licensed engineers to their factory_
 
 #### By _**Nick Lindau**_
 
@@ -10,6 +10,12 @@
 * _C#_
 * _Visual Studio Code_
 * _ASP NET Core MVC_
+* _MySql_
+* _MySql Workbench_
+* _Entity Framework_
+* _Bootstrap_
+* _CSS_
+* _ASP.NET Razor_
 
 ## Description
 
