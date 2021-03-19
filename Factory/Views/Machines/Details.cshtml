@@ -5,7 +5,7 @@
 @model Factory.Models.Machine;
 
 <div class="header">Machine Details</div>
-<hr />
+
 <div class="subHeader">@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</div>
 
 @if(Model.JoinEntities.Count == 0)
@@ -14,7 +14,7 @@
 }
 else
 {
-  <h4>Engineers that are licensed to run this machine: </h4>
+  <div class="subHeader">Engineers that are licensed to run this machine: </div>
   <ul>
     @foreach(var join in Model.JoinEntities)
     {

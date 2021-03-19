@@ -10,11 +10,15 @@
   color: rgb(250, 246, 215);
 }
 
-#backgroundImage  {
-  
+select  {
+  background-color: cadetblue;
+  color: aquamarine;
 }
 
 body  {
+  background-image: url(../img/factory.jpg);
+  background-repeat: repeat-x;
+  background-size: 650px 450px;
   background-color: rgb(48, 81, 82);
 }
 
@@ -27,7 +31,7 @@ a {
   color: aquamarine;
 }
 
-p, li {
+p, li, label {
   font-family: 'Orbitron', sans-serif;
   color:rgb(76, 154, 128);
 }
