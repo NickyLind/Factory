@@ -20,7 +20,7 @@
   @Html.EditorFor(model => model.Name)
 
   @Html.Label("Select a licensed engineer")
-  @Html.DropDownList("EngineerId")
+  @Html.DropDownList("EngineerId", "N/A")
   <input type="submit" value="Save" />
 }
 <p>Back to @Html.ActionLink("Machine List", "Index")</p>
