@@ -54,10 +54,12 @@ namespace Factory.Controllers
     }
 
     [HttpPost]
-    public ActionResult Edit(Engineer engineer, int MachineId)
+    public ActionResult Edit(Engineer engineer, int MachineId, int joinId)
     {
       if (MachineId != 0)
       {
+        var joinEntry = _db.EngineerMachine.FirstOrDefault(entry => entry.EngineerMachineId == joinId);
+        _db.EngineerMachine.Remove(joinEntry);
         _db.EngineerMachine.Add(new EngineerMachine() { MachineId = MachineId, EngineerId = engineer.EngineerId });
       }
       _db.Entry(engineer).State = EntityState.Modified;
@@ -67,8 +69,17 @@ namespace Factory.Controllers
 
     public ActionResult AddMachine(int id)
     {
-      var thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
-      ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "Name");
+      var thisEngineer = _db.Engineers
+        .Include(engineer => engineer.JoinEntities)
+        .ThenInclude(join => join.Machine)
+        .FirstOrDefault(engineer => engineer.EngineerId == id);
+      var selectedMachines = _db.EngineerMachine
+        .Where(em => em.EngineerId == id)
+        .Select(machine => machine.MachineId).ToList();
+      ViewBag.MachineId = new SelectList(_db.Machines
+        .Where(machine => !selectedMachines.Contains(machine.MachineId))
+        .Select(machine => machine),
+        "MachineId", "Name");
       return View(thisEngineer);
     }
 
