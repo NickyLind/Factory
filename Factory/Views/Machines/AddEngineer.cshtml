@@ -4,9 +4,9 @@
 
 @model Factory.Models.Machine
 
-<h2>Add an engineer</h2>
+<div class="header">Add an engineer</div>
 
-<h4>Add a licensed engineer for this machine: @Html.DisplayFor(model => model.Name)</h4>
+<div class="subHeader">Add a licensed engineer for this machine: @Html.DisplayFor(model => model.Name)</div>
 
 @using (Html.BeginForm())
 {

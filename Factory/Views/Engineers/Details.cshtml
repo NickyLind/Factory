@@ -4,9 +4,9 @@
 
 @model Factory.Models.Engineer
 
-<h2>Item Details</h2>
+<div class="header">Engineer Details</div>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
+<div class="subHeader">@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</div>
 
 @if(@Model.JoinEntities.Count == 0)
 {
@@ -14,7 +14,7 @@
 }
 else
 {
-  <h4>Machines this engineer is licensed to fix: </h4>
+  <div class="subHeader">Machines this engineer is licensed to fix: </div>
   <ul>
     @foreach(var join in Model.JoinEntities)
     {

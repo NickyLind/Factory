@@ -4,16 +4,16 @@
 @using Factory.Models;
 @model List<Factory.Models.Engineer>;
 
-<div class="pageHeader">Welcome to the Factory</div>
+<div class="header">Welcome to the Factory</div>
 
-<div class="pageSubHeader">Engineers:</div>
+<div class="subHeader">Engineers:</div>
 <ul>
 @foreach (Engineer engineer in ViewBag.Engineers)
 {
   <li>@Html.ActionLink($"{engineer.Name}", "Details", "Engineers", new { id = engineer.EngineerId })</li>
 }
 </ul>
-<div class="pageSubHeader">Machines:</div>
+<div class="subHeader">Machines:</div>
 <ul>
 @foreach (Machine machine in ViewBag.Machines)
 {
