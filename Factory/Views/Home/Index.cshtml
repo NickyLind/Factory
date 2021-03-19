@@ -9,14 +9,14 @@
 <ul>
 @foreach (Engineer engineer in ViewBag.Engineers)
 {
-  <li>@engineer.Name</li>
+  <li>@Html.ActionLink($"{engineer.Name}", "Details", "Engineers", new { id = engineer.EngineerId })</li>
 }
 </ul>
 <h3>Machines:</h3>
 <ul>
 @foreach (Machine machine in ViewBag.Machines)
 {
-  <li>@machine.Name</li>
+  <li>@Html.ActionLink($"{machine.Name}", "Details", "Machines", new { id = machine.MachineId })</li>
 }
 </ul>
 
