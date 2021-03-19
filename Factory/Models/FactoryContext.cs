@@ -1,8 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace ProjectName.Models
+namespace Factory.Models
 {
-  public class ProjectNameContext : DbContext
+  public class FactoryContext : DbContext
   {
     public virtual DbSet<Category> Categories { get; set; }
     public DbSet<Item> Items { get; set; }
