@@ -1,5 +1,26 @@
 .pageHeader {
   font-size: 50px;
   font-family: 'Righteous', cursive;
+  color: rgb(250, 246, 215);
 }
 
+.pageSubHeader  {
+  font-size: 30px;
+  font-family: 'Righteous', cursive;
+  color: rgb(250, 246, 215);
+}
+
+#backgorundImage {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container  {
+  background-color: rgb(48, 81, 82);
+}
+
+a {
+  font-family: 'Orbitron', sans-serif;
+  color: aquamarine;
+}

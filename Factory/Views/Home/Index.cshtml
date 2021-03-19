@@ -6,14 +6,14 @@
 
 <div class="pageHeader">Welcome to the Factory</div>
 
-<h3>Engineers:</h3>
+<div class="pageSubHeader">Engineers:</div>
 <ul>
 @foreach (Engineer engineer in ViewBag.Engineers)
 {
   <li>@Html.ActionLink($"{engineer.Name}", "Details", "Engineers", new { id = engineer.EngineerId })</li>
 }
 </ul>
-<h3>Machines:</h3>
+<div class="pageSubHeader">Machines:</div>
 <ul>
 @foreach (Machine machine in ViewBag.Machines)
 {
